@@ -30,10 +30,10 @@ const TaglineDivDesktop = styled.div`
 const TaglineDivMobile = styled.div`
     z-index: 50;
     position: absolute;
-    top: 4em;
+    top: 2.5em;
     display: none:
     margin: auto;
-    width: 90%;
+    width: 80%;
     max-width: 1920px;
     opacity: 0;
 
@@ -60,10 +60,10 @@ const TitleDivDesktop = styled.div`
 const TitleDivMobile = styled.div`
     z-index: 50;
     position: absolute;
-    bottom: 4em;
+    bottom: 7em;
     display: none:
     margin: auto;
-    width: 90%;
+    width: 80%;
     max-width: 1920px;
     opacity: 0;
 
@@ -72,12 +72,81 @@ const TitleDivMobile = styled.div`
         opacity: 1;
     }
 `
- 
+
+const DetailsContainer = styled.div`
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    z-index: 1000;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    max-width: 1920px;
+    height: 1%;
+
+    @media screen and (max-width: 900px) {
+        top: auto;
+        bottom: 4em;
+    }
+
+    .buynow {
+        position: relative;
+        margin-right: 60%;
+        margin-top: -20px;
+        width: 15%;
+
+        @media screen and (max-width: 900px) {
+            position: relative;
+            margin-right: 20%;
+            margin-top: -40px;
+            width: 35%;
+        }
+    }
+
+    .cstlogo {
+        position: relative;
+        margin-top: -20px;
+        width: 10%;
+
+        @media screen and (max-width: 900px) {
+            position: relative;
+            margin-top: -40px;
+            width: 20%;
+        }
+    }
+`
+
+const Photo = styled.div`
+    z-index: 1000;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    top: 15%;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    width: 45%;
+    maxWidth: 900px;
+
+    @media screen and (max-width: 900px) {
+        margin-top: 5em;
+        width: 70%;
+    }
+`
+
 const Landing = () => {
 
 return (
     <>
-        <div className="product-photo"
+    <Photo>
+        <ProductPhoto/>
+    </Photo>
+        {/* <div className="product-photo"
             style={{
                 zIndex: `1000`,
                 position: `absolute`,
@@ -94,7 +163,7 @@ return (
             }}
         >
             <ProductPhoto/>
-        </div>
+        </div> */}
         <div className="texture-top"
             style={{
                 zIndex: `100`,
@@ -139,6 +208,14 @@ return (
                 border: `.5em solid #C51F30`,
             }}
             >
+                <DetailsContainer>
+                    <div className="buynow">
+                        <BuyNowTag />
+                    </div>
+                    <div className="cstlogo">
+                        <Logo />
+                    </div>
+                </DetailsContainer>
                 <div className="Content"
                 style={{
                     display: `flex`,
@@ -159,22 +236,7 @@ return (
                     <TaglineDivMobile>
                         <TaglineMobile/>
                     </TaglineDivMobile>
-                    {/* <div className="product-tagline"
-                    style={{
-                        zIndex: `50`,
-                        position: `absolute`,
-                        top: `4em`,
-                        left: `0`,
-                        right: `0`,
-                        display: `block`,
-                        margin: `auto`,
-                        width: `90%`,
-                        maxWidth: `1920px`,
-                    }}
-                    >
-                        <TaglineDesktop/>
-                    </div> */}
-                    <div className="buy-now"
+                    {/* <div className="buy-now"
                     style={{
                         zIndex: `100`,
                         position: `relative`,
@@ -185,8 +247,8 @@ return (
                     }}
                     >
                         <BuyNowTag/>
-                    </div>
-                    <div className="logo"
+                    </div> */}
+                    {/* <div className="logo"
                     style={{
                         zIndex: `100`,
                         position: `relative`,
@@ -197,28 +259,13 @@ return (
                     }}
                     >
                         <Logo/>
-                    </div>
+                    </div> */}
                     <TitleDivDesktop>
                         <BaconBrittleDesktop/>
                     </TitleDivDesktop>
                     <TitleDivMobile>
                         <BaconBrittleMobile/>
                     </TitleDivMobile>
-                    {/* <div className="product-name"
-                    style={{
-                        zIndex: `50`,
-                        position: `absolute`,
-                        bottom: `4em`,
-                        left: `0`,
-                        right: `0`,
-                        display: `block`,
-                        margin: `auto`,
-                        width: `90%`,
-                        maxWidth: `1920px`,
-                    }}
-                    >
-                        <BaconBrittleDesktop/>
-                    </div> */}
                 </div>
             </div>
         </div>
