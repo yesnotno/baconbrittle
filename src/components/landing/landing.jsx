@@ -1,10 +1,13 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 import top from "../../images/texture-top.jpeg"
 import bottom from "../../images/texture-bottom.jpeg"
 
 import BaconBrittleDesktop from "../vectors/BaconBrittleDesktop"
 import TaglineDesktop from "../vectors/TaglineDesktop"
+import ProductPhoto from "../vectors/ProductPhoto"
+import ProductImage from "../../images/product-photo.png"
 
 import "./landing.css"
  
@@ -12,6 +15,24 @@ const Landing = () => {
 
 return (
     <>
+        <div className="product-photo"
+            style={{
+                zIndex: `1000`,
+                position: `absolute`,
+                display: `flex`,
+                justifyContent: `center`,
+                alignItems: `center`,
+                margin: `auto`,
+                top: `15%`,
+                bottom: `15%`,
+                left: `0`,
+                right: `0`,
+                width: `65%`,
+                maxWidth: `900px`,
+            }}
+        >
+            <ProductPhoto/>
+        </div>
         <div className="texture-top"
             style={{
                 zIndex: `100`,
@@ -83,18 +104,6 @@ return (
                     >
                         <TaglineDesktop/>
                     </div>
-                    {/* <div className="Center-Stack"
-                    style={{
-                        zIndex: `40`,
-                        position: `absolute`,
-                        margin: `auto`,
-                        width: `80%`,
-                        height: `300px`,
-                        backgroundColor: `blue`,
-                        opacity: `40%`,
-                    }}
-                    >
-                    </div> */}
                     <div className="Product-Name"
                     style={{
                         zIndex: `50`,
