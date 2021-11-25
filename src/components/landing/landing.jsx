@@ -114,7 +114,7 @@ const DetailsContainer = styled.div`
         @media screen and (max-width: 900px) {
             position: relative;
             margin-top: -40px;
-            width: 20%;
+            width: 20%; 
         }
     }
 `
