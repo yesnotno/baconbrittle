@@ -1,5 +1,6 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 
 import top from "../../images/texture-top.jpeg"
 import bottom from "../../images/texture-bottom.jpeg"
@@ -7,9 +8,70 @@ import bottom from "../../images/texture-bottom.jpeg"
 import BaconBrittleDesktop from "../vectors/BaconBrittleDesktop"
 import TaglineDesktop from "../vectors/TaglineDesktop"
 import ProductPhoto from "../vectors/ProductPhoto"
-import ProductImage from "../../images/product-photo.png"
+import BuyNowTag from "../vectors/BuyNowTag"
+import Logo from "../vectors/Logo"
+import BaconBrittleMobile from "../vectors/BaconBrittleMobile"
+import TaglineMobile from "../vectors/TaglineMobile"
 
-import "./landing.css"
+const TaglineDivDesktop = styled.div`
+    z-index: 50;
+    position: absolute;
+    top: 4em;
+    display: block:
+    margin: auto;
+    width: 90%;
+    max-width: 1920px;
+
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
+`
+
+const TaglineDivMobile = styled.div`
+    z-index: 50;
+    position: absolute;
+    top: 4em;
+    display: none:
+    margin: auto;
+    width: 90%;
+    max-width: 1920px;
+    opacity: 0;
+
+    @media screen and (max-width: 900px) {
+        display: block;
+        opacity: 1;
+    }
+`
+
+const TitleDivDesktop = styled.div`
+    z-index: 50;
+    position: absolute;
+    bottom: 4em;
+    display: block:
+    margin: auto;
+    width: 90%;
+    max-width: 1920px;
+
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
+`
+
+const TitleDivMobile = styled.div`
+    z-index: 50;
+    position: absolute;
+    bottom: 4em;
+    display: none:
+    margin: auto;
+    width: 90%;
+    max-width: 1920px;
+    opacity: 0;
+
+    @media screen and (max-width: 900px) {
+        display: block;
+        opacity: 1;
+    }
+`
  
 const Landing = () => {
 
@@ -27,7 +89,7 @@ return (
                 bottom: `15%`,
                 left: `0`,
                 right: `0`,
-                width: `65%`,
+                width: `45%`,
                 maxWidth: `900px`,
             }}
         >
@@ -79,6 +141,9 @@ return (
             >
                 <div className="Content"
                 style={{
+                    display: `flex`,
+                    justifyContent: `center`,
+                    alignItems: `center`,
                     zIndex: `50`,
                     margin: `auto`,
                     width: `95%`,
@@ -88,7 +153,13 @@ return (
                     alignContent: `center`,
                 }}
                 >
-                    <div className="Product-Tagline"
+                    <TaglineDivDesktop>
+                        <TaglineDesktop/>
+                    </TaglineDivDesktop>
+                    <TaglineDivMobile>
+                        <TaglineMobile/>
+                    </TaglineDivMobile>
+                    {/* <div className="product-tagline"
                     style={{
                         zIndex: `50`,
                         position: `absolute`,
@@ -99,12 +170,41 @@ return (
                         margin: `auto`,
                         width: `90%`,
                         maxWidth: `1920px`,
-                        // backgroundColor: `blue`,
                     }}
                     >
                         <TaglineDesktop/>
+                    </div> */}
+                    <div className="buy-now"
+                    style={{
+                        zIndex: `100`,
+                        position: `relative`,
+                        // margin: `auto`,
+                        marginTop: `100px`,
+                        marginRight: `60%`,
+                        width: `15%`,
+                    }}
+                    >
+                        <BuyNowTag/>
                     </div>
-                    <div className="Product-Name"
+                    <div className="logo"
+                    style={{
+                        zIndex: `100`,
+                        position: `relative`,
+                        // margin: `auto`,
+                        marginTop: `-50px`,
+                        // marginLeft: `75%`,
+                        width: `10%`,
+                    }}
+                    >
+                        <Logo/>
+                    </div>
+                    <TitleDivDesktop>
+                        <BaconBrittleDesktop/>
+                    </TitleDivDesktop>
+                    <TitleDivMobile>
+                        <BaconBrittleMobile/>
+                    </TitleDivMobile>
+                    {/* <div className="product-name"
                     style={{
                         zIndex: `50`,
                         position: `absolute`,
@@ -115,12 +215,10 @@ return (
                         margin: `auto`,
                         width: `90%`,
                         maxWidth: `1920px`,
-                        // backgroundColor: `blue`,
                     }}
                     >
                         <BaconBrittleDesktop/>
-                    </div>
-                    
+                    </div> */}
                 </div>
             </div>
         </div>
