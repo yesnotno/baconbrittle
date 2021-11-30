@@ -35,11 +35,13 @@ const TaglineDivMobile = styled.div`
     margin: auto;
     width: 80%;
     max-width: 1920px;
-    opacity: 0;
+
+    @media screen and (min-width: 900px) {
+        display: none;
+    }
 
     @media screen and (max-width: 900px) {
         display: block;
-        opacity: 1;
     }
 `
 
@@ -65,11 +67,13 @@ const TitleDivMobile = styled.div`
     margin: auto;
     width: 80%;
     max-width: 1920px;
-    opacity: 0;
+
+    @media screen and (min-width: 900px) {
+        display: none;
+    }
 
     @media screen and (max-width: 900px) {
         display: block;
-        opacity: 1;
     }
 `
 
@@ -169,8 +173,8 @@ return (
                 zIndex: `100`,
                 display: `flex`,
                 position: `absolute`,
-                width: `100%`,
-                height: `100%`,
+                width: `100vw`,
+                height: `100vh`,
                 backgroundImage: `url(${top})`,
                 opacity: `10%`,
                 mixBlendMode: `overlay`,
@@ -181,8 +185,8 @@ return (
                 zIndex: `90`,
                 display: `flex`,
                 position: `absolute`,
-                width: `100%`,
-                height: `100%`,
+                width: `100vw`,
+                height: `100vh`,
                 backgroundImage: `url(${bottom})`,
                 opacity: `80%`,
                 mixBlendMode: `multiply`,
