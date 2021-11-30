@@ -37,7 +37,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-FV1E02VNWG", // Bacon Brittle Measurement ID
+          "G-X5QVWW8YLX", // Bacon Brittle Measurement ID
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
