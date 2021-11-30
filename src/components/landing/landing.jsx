@@ -53,7 +53,7 @@ const TitleDivDesktop = styled.div`
     bottom: 4em;
     display: block:
     margin: auto;
-    width: 80%;
+    width: 75%;
     max-width: 1920px;
 
     @media screen and (max-width: 900px) {
@@ -141,12 +141,12 @@ const Photo = styled.div`
     max-width: 700px;
 
     @media screen and (max-width: 900px) {
-        margin-top: 10em;
+        margin-top: 10.5em;
         width: 60%;
     }
 `
 
-const Go = styled(Link)`
+const Go = styled.a`
     text-decoration: none;
 `;
 
@@ -155,6 +155,7 @@ const Landing = () => {
 
 return (
     <>
+    <Go href="https://www.cstsweets.com/collections/peanut-butter-brittle/products/bacon-brittle">
     <Photo>
         <ProductPhoto/>
     </Photo>
@@ -287,6 +288,7 @@ return (
                 </div>
             </div>
         </div>
+        </Go>
     </>
 )
 }
