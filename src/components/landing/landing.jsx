@@ -64,7 +64,7 @@ const TitleDivDesktop = styled.div`
 const TitleDivMobile = styled.div`
     z-index: 1000;
     position: absolute;
-    bottom: 7em;
+    bottom: 3em;
     display: none:
     margin: auto;
     width: 80%;
@@ -95,7 +95,7 @@ const DetailsContainer = styled.div`
 
     @media screen and (max-width: 900px) {
         top: auto;
-        bottom: 4em;
+        bottom: 0em;
     }
 
     .buynow {
@@ -141,8 +141,8 @@ const Photo = styled.div`
     max-width: 700px;
 
     @media screen and (max-width: 900px) {
-        margin-top: 5em;
-        width: 70%;
+        margin-top: 10em;
+        width: 60%;
     }
 `
 
