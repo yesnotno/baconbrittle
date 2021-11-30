@@ -13,13 +13,15 @@ import Logo from "../vectors/Logo"
 import BaconBrittleMobile from "../vectors/BaconBrittleMobile"
 import TaglineMobile from "../vectors/TaglineMobile"
 
+import { Link } from "gatsby"
+
 const TaglineDivDesktop = styled.div`
     z-index: 50;
     position: absolute;
     top: 4em;
     display: block:
     margin: auto;
-    width: 90%;
+    width: 80%;
     max-width: 1920px;
 
     @media screen and (max-width: 900px) {
@@ -51,7 +53,7 @@ const TitleDivDesktop = styled.div`
     bottom: 4em;
     display: block:
     margin: auto;
-    width: 90%;
+    width: 80%;
     max-width: 1920px;
 
     @media screen and (max-width: 900px) {
@@ -60,7 +62,7 @@ const TitleDivDesktop = styled.div`
 `
 
 const TitleDivMobile = styled.div`
-    z-index: 50;
+    z-index: 1000;
     position: absolute;
     bottom: 7em;
     display: none:
@@ -97,6 +99,7 @@ const DetailsContainer = styled.div`
     }
 
     .buynow {
+        z-index: 200;
         position: relative;
         margin-right: 60%;
         margin-top: -20px;
@@ -113,7 +116,7 @@ const DetailsContainer = styled.div`
     .cstlogo {
         position: relative;
         margin-top: -20px;
-        width: 10%;
+        width: 8%;
 
         @media screen and (max-width: 900px) {
             position: relative;
@@ -134,14 +137,19 @@ const Photo = styled.div`
     bottom: 15%;
     left: 0;
     right: 0;
-    width: 45%;
-    maxWidth: 900px;
+    width: 30%;
+    max-width: 700px;
 
     @media screen and (max-width: 900px) {
         margin-top: 5em;
         width: 70%;
     }
 `
+
+const Go = styled(Link)`
+    text-decoration: none;
+`;
+
 
 const Landing = () => {
 
@@ -170,6 +178,7 @@ return (
         </div> */}
         <div className="texture-top"
             style={{
+                pointerEvents: `none`,
                 zIndex: `100`,
                 display: `flex`,
                 position: `absolute`,
@@ -182,6 +191,7 @@ return (
         />
         <div className="texture-bottom"
             style={{
+                pointerEvents: `none`,
                 zIndex: `90`,
                 display: `flex`,
                 position: `absolute`,
@@ -213,12 +223,16 @@ return (
             }}
             >
                 <DetailsContainer>
-                    <div className="buynow">
-                        <BuyNowTag />
-                    </div>
-                    <div className="cstlogo">
-                        <Logo />
-                    </div>
+                    <a className="buynow" href="https://www.cstsweets.com/collections/peanut-butter-brittle/products/bacon-brittle">
+                        {/* <div className="buynow"> */}
+                            <BuyNowTag />
+                        {/* </div> */}
+                    </a>
+                    <a className="cstlogo" href="https://www.cstsweets.com/collections/peanut-butter-brittle/products/bacon-brittle">
+                        {/* <div className="cstlogo"> */}
+                            <Logo />
+                        {/* </div> */}
+                    </a>
                 </DetailsContainer>
                 <div className="Content"
                 style={{
